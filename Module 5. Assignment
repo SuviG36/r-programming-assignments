@@ -1,0 +1,24 @@
+# Create the matrices
+A <- matrix(1:100, nrow = 10)
+B <- matrix(1:1000, nrow = 10)
+
+#Check the dimensions
+dim(A)
+dim(B)
+
+#Compute inverse and determinant for A
+invA <- tryCatch(solve(A), error = function(e) e)
+detA <- det(A)
+
+# Try the same for B, but catch errrors
+invB <- tryCatch(solve(B), error = function(e) e)
+detB <- tryCatch(det(B), error = function(e) e)
+
+# Step 4: print everything
+cat("det(A):", detA, "\n\n")
+cat("inv(A):\n"); print(invA)
+
+cat("\nResult for det(B):\n"); print(detB)
+cat("\nResult for inv(B):\n"); print(invB)
+
+
